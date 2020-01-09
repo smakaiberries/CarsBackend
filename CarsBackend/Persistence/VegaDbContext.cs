@@ -18,5 +18,6 @@ namespace CarsBackend.Persistence
         public DbSet<Make> Makes { get; set; }
         public DbSet<Model> Models { get; set; }
         public ActionResult<IEnumerable<Make>> Include { get; internal set; }
+        public DbSet<Features> Features { get; set; }
     }
 }

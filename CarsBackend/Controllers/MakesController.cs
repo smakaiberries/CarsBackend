@@ -25,5 +25,11 @@ namespace CarsBackend.Controllers
         {
             return await this.context.Makes.Include(m => m.Models).ToListAsync();
         }
+
+        [HttpGet("/api/vehicles/features")]
+        public async Task<IEnumerable<Features>> GetFeatures()
+        {
+            return await this.context.Features.ToListAsync();
+        }
     }
 }

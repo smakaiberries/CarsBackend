@@ -2,7 +2,7 @@
 
 namespace CarsBackend.Migrations
 {
-    public partial class SeedDatabase2 : Migration
+    public partial class Seed : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

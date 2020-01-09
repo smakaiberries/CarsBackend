@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarsBackend.Migrations
 {
     [DbContext(typeof(VegaDbContext))]
-    [Migration("20200109141342_ApplyingConstraints")]
-    partial class ApplyingConstraints
+    [Migration("20200109172228_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,7 @@ namespace CarsBackend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Make");
+                    b.ToTable("Makes");
                 });
 
             modelBuilder.Entity("CarsBackend.Models.Model", b =>
@@ -52,7 +52,7 @@ namespace CarsBackend.Migrations
 
                     b.HasIndex("MakeId");
 
-                    b.ToTable("Model");
+                    b.ToTable("Models");
                 });
 
             modelBuilder.Entity("CarsBackend.Models.Model", b =>
