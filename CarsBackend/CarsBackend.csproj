@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200109142100_Seed.cs" />
     <Compile Remove="Migrations\20200109142100_Seed.Designer.cs" />
+    <Compile Remove="Migrations\20200109213738_Seed.cs" />
+    <Compile Remove="Migrations\20200109213738_Seed.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />

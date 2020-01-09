@@ -27,7 +27,7 @@ namespace CarsBackend.Controllers
         }
 
         [HttpGet("/api/vehicles/features")]
-        public async Task<IEnumerable<Features>> GetFeatures()
+        public async Task<IEnumerable<Feature>> GetFeatures()
         {
             return await this.context.Features.ToListAsync();
         }
