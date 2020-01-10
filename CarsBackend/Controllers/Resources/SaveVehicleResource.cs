@@ -2,24 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace CarsBackend.Controllers.Resources
 {
-    public class VehicleResource
+    public class SaveVehicleResource
     {
         public int Id { get; set; }
-        public KeyValuePairResource Model { get; set; }
-        public KeyValuePairResource Make { get; set; }
+        public int ModelId { get; set; }
         public bool IsRegistered { get; set; }
+        [Required]
         public ContactResource Contact { get; set; }
-        public DateTime LastUpdate { get; set; }
-        public virtual ICollection<KeyValuePairResource> Features { get; set; }
+        public ICollection<int> Features { get; set; }
 
-        public VehicleResource()
+        public SaveVehicleResource()
         {
-            this.Features = new Collection<KeyValuePairResource>();
+            Features = new Collection<int>();
         }
     }
 }
