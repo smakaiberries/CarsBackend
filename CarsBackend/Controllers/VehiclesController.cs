@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CarsBackend.Controllers.Resources;
 using CarsBackend.Core;
+using CarsBackend.Core.Models;
 using CarsBackend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -114,6 +115,16 @@ namespace CarsBackend.Controllers
             var vehicleResource = mapper.Map<Vehicle, VehicleResource>(vehicle);
 
             return Ok(vehicleResource);
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<VehicleResource>> GetVehicles(FilterResource filterRecource)
+        {
+            var filter = mapper.Map<FilterResource, Filter>(filterRecource);
+
+            var vehicles = await this.repository.GetVehicles(filter);
+
+            return this.mapper.Map<IEnumerable<Vehicle>, IEnumerable<VehicleResource>>(vehicles);
         }
     }
 }

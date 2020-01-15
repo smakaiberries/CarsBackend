@@ -1,4 +1,6 @@
-﻿using CarsBackend.Models;
+﻿using CarsBackend.Core.Models;
+using CarsBackend.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CarsBackend.Core
@@ -8,5 +10,6 @@ namespace CarsBackend.Core
         void Add(Vehicle vehicle);
         Task<Vehicle> GetVehicle(int id, bool includeRelated = true);
         void Remove(Vehicle vehicle);
+        Task<IEnumerable<Vehicle>> GetVehicles(Filter filter);
     }
 }

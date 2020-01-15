@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CarsBackend.Controllers.Resources;
+using CarsBackend.Core.Models;
 using CarsBackend.Models;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace CarsBackend
             CreateMap<Model, KeyValuePairResource>();
             CreateMap<Feature, KeyValuePairResource>();
 
+            CreateMap<FilterResource, Filter>();
             CreateMap<Vehicle, SaveVehicleResource>().ForMember(vr => vr.Contact, opt => opt.MapFrom(v => new ContactResource
             {
                 Name = v.ContactName,
